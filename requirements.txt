@@ -1,0 +1,31 @@
+# ============================================================
+# 基于 RNN/LSTM/GRU 的天气时序预测实验
+# Python 3.12 + PyTorch 2.6 (CUDA 12.6) — 复现环境
+# ============================================================
+# 安装方式:
+#   pip install -r requirements.txt
+#   pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cu126
+# ============================================================
+
+# 核心框架
+# PyTorch (2.6.0+cu126) — 需从 PyTorch 官方源安装，见上方注释
+# 以下为 PyTorch 生态包，需与 torch 版本匹配
+torchvision==0.21.0
+torchaudio==2.6.0
+
+# 数据处理
+pandas==2.2.3
+numpy==1.26.4
+scipy==1.11.4
+
+# 机器学习
+scikit-learn==1.6.1
+
+# 可视化
+matplotlib==3.10.0
+
+# HTTP 请求（Open-Meteo API）
+requests==2.32.3
+
+# YAML 配置文件解析
+PyYAML==6.0.2

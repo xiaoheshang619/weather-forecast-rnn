@@ -43,3 +43,5 @@ ENV/
 # *.docx
 # *.doc
 # *.txt
+# Claude Code 内部文件
+.claude/
