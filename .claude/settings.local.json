@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wmic os *)",
+      "Bash(\"C:\\\\Program Files\\\\JetBrains\\\\PyCharm Community Edition 2024.3\\\\bin\\\\pycharm64.exe\" \"D:\\\\Desktop\\\\deeplearning\")",
+      "Bash(pycharm \"D:\\\\Desktop\\\\deeplearning\")",
+      "Bash(D:\\\\Anaconda\\\\envs\\\\simpleneuralnetworkframework\\\\python.exe *)",
+      "Bash(\"D:\\\\Anaconda\\\\envs\\\\simpleneuralnetworkframework\\\\python.exe\" -c \"import sklearn; print\\('sklearn:', sklearn.__version__\\)\")",
+      "Bash(\"D:\\\\Anaconda\\\\envs\\\\simpleneuralnetworkframework\\\\python.exe\" -c \"import yaml; print\\('yaml ok'\\)\")",
+      "Bash(\"D:\\\\Anaconda\\\\envs\\\\simpleneuralnetworkframework\\\\python.exe\" -m pip install scikit-learn -q)",
+      "Bash(\"D:\\\\Anaconda\\\\envs\\\\simpleneuralnetworkframework\\\\python.exe\" \"src/hparam_search.py\")",
+      "Bash('D:\\\\Anaconda\\\\envs\\\\simpleneuralnetworkframework\\\\python.exe' -c ' *)",
+      "Bash(\"D:\\\\Anaconda\\\\envs\\\\simpleneuralnetworkframework\\\\python.exe\" -m pip freeze)"
+    ]
+  }
+}

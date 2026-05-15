@@ -1,0 +1,29 @@
+SimpleRNN (rnn_base)  参数量: 13,441
+SimpleRNN(
+  (rnn): RNN(13, 64, num_layers=2, batch_first=True, dropout=0.2)
+  (fc): Linear(in_features=64, out_features=1, bias=True)
+)
+
+LSTM (lstm_base)  参数量: 53,569
+LSTM(
+  (lstm): LSTM(13, 64, num_layers=2, batch_first=True, dropout=0.2)
+  (fc): Linear(in_features=64, out_features=1, bias=True)
+)
+
+GRU (gru_base)  参数量: 40,193
+GRU(
+  (gru): GRU(13, 64, num_layers=2, batch_first=True, dropout=0.2)
+  (fc): Linear(in_features=64, out_features=1, bias=True)
+)
+
+LSTM (lstm_large)  参数量: 337,537
+LSTM(
+  (lstm): LSTM(13, 128, num_layers=3, batch_first=True, dropout=0.3)
+  (fc): Linear(in_features=128, out_features=1, bias=True)
+)
+
+GRU (gru_small)  参数量: 4,545
+GRU(
+  (gru): GRU(13, 32, batch_first=True)
+  (fc): Linear(in_features=32, out_features=1, bias=True)
+)

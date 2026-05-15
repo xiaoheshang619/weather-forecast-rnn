@@ -1,0 +1,6 @@
+label,model_type,best_val_loss,test_loss,test_mae,test_rmse,desc
+rnn_base,rnn,0.097304,0.111097,0.242685,0.326565,基准RNN: RNN hidden=64 layers=2 lr=0.001 batch=32 dropout=0.2
+lstm_base,lstm,0.103348,0.111651,0.253343,0.328010,基准LSTM: LSTM hidden=64 layers=2 lr=0.001 batch=32 dropout=0.2
+gru_base,gru,0.108254,0.112342,0.250266,0.329882,基准GRU: GRU hidden=64 layers=2 lr=0.001 batch=32 dropout=0.2
+lstm_large,lstm,0.144842,0.215390,0.358893,0.451458,大模型LSTM: LSTM hidden=128 layers=3 lr=0.0005 batch=64 dropout=0.3
+gru_small,gru,0.125367,0.139206,0.285387,0.358078,小模型GRU: GRU hidden=32 layers=1 lr=0.01 batch=16 dropout=0.1

@@ -1,0 +1,45 @@
+# ── 数据 ──
+data:
+  csv_path: "data/raw/weather_hefei_30year.csv"
+  feature_cols:
+    - temperature_2m_max
+    - temperature_2m_min
+    - temperature_2m_mean
+    - precipitation_sum
+    - rain_sum
+    - snowfall_sum
+    - wind_speed_10m_max
+    - wind_gusts_10m_max
+    - wind_direction_10m_dominant
+    - shortwave_radiation_sum
+    - et0_fao_evapotranspiration
+    - day_of_year
+    - month
+  target_cols:
+    - temperature_2m_mean
+  seq_len: 14
+  pred_len: 1
+  train_ratio: 0.8
+  val_ratio: 0.1
+
+# ── 模型 ──
+model:
+  type: "lstm"
+  hidden_dim: 64
+  num_layers: 2
+  dropout: 0.2
+
+# ── 训练 ──
+train:
+  batch_size: 32
+  epochs: 100
+  lr: 0.001
+  weight_decay: 0.00001
+  patience: 15
+  device: "cuda"
+
+# ── 输出 ──
+output:
+  model_dir: "outputs/models"
+  log_dir: "outputs/logs"
+  figure_dir: "outputs/figures"
