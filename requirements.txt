@@ -29,3 +29,6 @@ requests==2.32.3
 
 # YAML 配置文件解析
 PyYAML==6.0.2
+
+# 模型结构可视化（类似 Keras summary）
+torchinfo==1.8.0
