@@ -10,25 +10,40 @@
 
 ## 文件结构
 ```
-weather-forecast-rnn/
-├── src/                 # 核心代码
-│   ├── models/          # 模型定义（RNN/LSTM/GRU）
-│   ├── data/            # 数据加载与预处理
-│   ├── train.py         # 训练主程序
-│   ├── predict.py       # 预测脚本
-│   └── utils.py         # 工具函数
-├── configs/             # 超参数配置文件
-│   ├── rnn_base.yaml    # RNN基准配置
-│   ├── lstm_base.yaml   # LSTM基准配置
-│   ├── gru_base.yaml    # GRU基准配置
-│   └── *.yaml           # 其他变体配置
-├── outputs/             # 实验结果
-│   ├── logs/            # 训练日志
-│   ├── figures/         # 预测结果可视化图
-│   └── checkpoints/     # 训练好的模型权重
-├── requirements.txt     # 依赖包列表
-└── README.md            # 文本文件
+├── configs/                     # 超参数配置（8 个）
+│   ├── config.yaml              # 默认
+│   ├── rnn_base.yaml            # RNN 同参数对照
+│   ├── lstm_base.yaml           # LSTM 同参数对照
+│   ├── gru_base.yaml            # GRU 同参数对照
+│   ├── lstm_large.yaml          # LSTM 大模型
+│   ├── gru_small.yaml           # GRU 小模型
+│   ├── *_6year.yaml             # 6 年数据变体（rnn/lstm/gru）
+│   ├── *_30year.yaml            # 30 年数据变体（rnn/lstm/gru）
+├── data/raw/                    # Open-Meteo 原始数据（3年+6年+30年）
+├── src/
+│   ├── data/fetch_weather.py    # 数据获取
+│   ├── data/dataset.py          # 预处理 + DataLoader
+│   ├── models/                  # 模型定义
+│   │   ├── simple_rnn.py
+│   │   ├── lstm.py
+│   │   └── gru.py
+│   ├── utils/                   # 工具模块
+│   │   ├── metrics.py           # MAE / RMSE
+│   │   ├── early_stopping.py    # 早停
+│   │   ├── visualization.py     # 绘图
+│   │   └── logger.py            # 日志
+│   ├── train.py                 # 单次训练入口
+│   └── hparam_search.py         # 超参数搜索入口
+├── outputs/                     # 产出物（运行后生成）
+│    ├── models/                 # .pt 模型权重
+│    ├── logs/                   # .log 训练日志 + .csv 对比表
+│    └── figures/                # Loss 曲线 + 预测图
+├── requirements.txt             # 依赖包列表
+└── README.md                    # 文本文件
 ```
+
+
+
 
 ## 模型说明
 本项目实现了三种经典的循环神经网络模型，并进行了针对性优化：
@@ -50,19 +65,21 @@ weather-forecast-rnn/
 
 ## 使用方法
 ### 1. 环境安装
-
+```bash
 pip install -r requirements.txt
-
+```
 
 ### 2. 数据准备
 本项目数据来自Open-Meteo Archive API，可通过以下方式获取：
+```python
 from src.data import download_data
 download_data(start_date="1996-05-13", end_date="2026-05-13")
-
+```
 
 ### 3. 模型训练
-
+```bash
 python src/train.py --config configs/gru_base.yaml
+```
 
 
 
