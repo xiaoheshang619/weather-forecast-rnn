@@ -8,7 +8,6 @@
 
 import torch.nn as nn
 
-
 class SimpleRNN(nn.Module):
     def __init__(
         self,
